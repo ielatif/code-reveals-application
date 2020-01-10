@@ -1,0 +1,47 @@
+entity Company {
+	name String
+}
+
+entity Test {
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Candidate {
+	firstName String,
+	lastName String,
+	email String
+}
+
+entity Interviewer {
+	firstName String,
+	lastName String,
+	experience String,
+    role String,
+    workAt String
+}
+
+entity Role {
+	name String required
+}
+
+entity Challenge {
+	title String required,
+    description String
+}
+
+entity Task {
+	name String required
+}
+
+relationship OneToMany {
+	Company{test} to Test,
+    Candidate{test} to Test,
+    Interviewer{test} to Test,
+    Role{challenge} to Challenge,
+    Challenge{task} to Task
+}
+
+relationship OneToOne {
+	Test{role} to Role
+}
