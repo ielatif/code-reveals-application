@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Assessment.
+    -->
+    <changeSet id="20200110145702-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="assessment"
+                                 constraintName="fk_assessment_role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+
+        <addForeignKeyConstraint baseColumnNames="company_id"
+                                 baseTableName="assessment"
+                                 constraintName="fk_assessment_company_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="company"/>
+
+        <addForeignKeyConstraint baseColumnNames="candidate_id"
+                                 baseTableName="assessment"
+                                 constraintName="fk_assessment_candidate_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="candidate"/>
+
+        <addForeignKeyConstraint baseColumnNames="interviewer_id"
+                                 baseTableName="assessment"
+                                 constraintName="fk_assessment_interviewer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="interviewer"/>
+
+    </changeSet>
+</databaseChangeLog>

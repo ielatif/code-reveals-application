@@ -1,0 +1,25 @@
+{
+  "codeRevealsApplicationApp": {
+    "challenge": {
+      "home": {
+        "title": "Challenges",
+        "createLabel": "Créer un nouveau Challenge",
+        "createOrEditLabel": "Créer ou éditer un Challenge",
+        "notFound": "Aucun Challenge trouvé"
+      },
+      "created": "Un nouveau Challenge a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Challenge avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Challenge avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Challenge {{ id }} ?"
+      },
+      "detail": {
+        "title": "Challenge"
+      },
+      "title": "Title",
+      "description": "Description",
+      "task": "Task",
+      "role": "Role"
+    }
+  }
+}
