@@ -14,6 +14,16 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145701_added_entity_Company.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145702_added_entity_Assessment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145703_added_entity_Candidate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145704_added_entity_Interviewer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145705_added_entity_Role.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145706_added_entity_Challenge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145707_added_entity_Task.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200110145702_added_entity_constraints_Assessment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145706_added_entity_constraints_Challenge.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200110145707_added_entity_constraints_Task.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

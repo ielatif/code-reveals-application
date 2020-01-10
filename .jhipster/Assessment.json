@@ -1,0 +1,45 @@
+{
+    "name": "Assessment",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "role",
+            "otherEntityRelationshipName": "assessment",
+            "relationshipName": "role",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "company",
+            "otherEntityRelationshipName": "assessment",
+            "relationshipName": "company",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "candidate",
+            "otherEntityRelationshipName": "assessment",
+            "relationshipName": "candidate",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "interviewer",
+            "otherEntityRelationshipName": "assessment",
+            "relationshipName": "interviewer",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200110145702",
+    "entityTableName": "assessment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
