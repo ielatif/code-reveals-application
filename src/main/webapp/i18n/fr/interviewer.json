@@ -1,0 +1,27 @@
+{
+  "codeRevealsApplicationApp": {
+    "interviewer": {
+      "home": {
+        "title": "Interviewers",
+        "createLabel": "Créer un nouveau Interviewer",
+        "createOrEditLabel": "Créer ou éditer un Interviewer",
+        "notFound": "Aucun Interviewer trouvé"
+      },
+      "created": "Un nouveau Interviewer a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Interviewer avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Interviewer avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Interviewer {{ id }} ?"
+      },
+      "detail": {
+        "title": "Interviewer"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "experience": "Experience",
+      "role": "Role",
+      "workAt": "Work At",
+      "assessment": "Assessment"
+    }
+  }
+}
