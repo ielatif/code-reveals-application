@@ -45,6 +45,18 @@ public class CacheConfiguration {
             createCache(cm, com.otala.codereveals.domain.User.class.getName());
             createCache(cm, com.otala.codereveals.domain.Authority.class.getName());
             createCache(cm, com.otala.codereveals.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.otala.codereveals.domain.Company.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Company.class.getName() + ".assessments");
+            createCache(cm, com.otala.codereveals.domain.Assessment.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Candidate.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Candidate.class.getName() + ".assessments");
+            createCache(cm, com.otala.codereveals.domain.Interviewer.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Interviewer.class.getName() + ".assessments");
+            createCache(cm, com.otala.codereveals.domain.Role.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Role.class.getName() + ".challenges");
+            createCache(cm, com.otala.codereveals.domain.Challenge.class.getName());
+            createCache(cm, com.otala.codereveals.domain.Challenge.class.getName() + ".tasks");
+            createCache(cm, com.otala.codereveals.domain.Task.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

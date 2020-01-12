@@ -1,0 +1,36 @@
+{
+    "name": "Candidate",
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "assessment",
+            "otherEntityRelationshipName": "candidate",
+            "relationshipName": "assessment"
+        }
+    ],
+    "changelogDate": "20200112234851",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "candidate",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

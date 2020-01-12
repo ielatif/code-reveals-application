@@ -1,0 +1,25 @@
+{
+  "codeRevealsApplicationApp": {
+    "challenge": {
+      "home": {
+        "title": "Challenges",
+        "createLabel": "Create a new Challenge",
+        "createOrEditLabel": "Create or edit a Challenge",
+        "notFound": "No Challenges found"
+      },
+      "created": "A new Challenge is created with identifier {{ param }}",
+      "updated": "A Challenge is updated with identifier {{ param }}",
+      "deleted": "A Challenge is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Challenge {{ id }}?"
+      },
+      "detail": {
+        "title": "Challenge"
+      },
+      "title": "Title",
+      "description": "Description",
+      "task": "Task",
+      "role": "Role"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "codeRevealsApplicationApp": {
+    "candidate": {
+      "home": {
+        "title": "Candidates",
+        "createLabel": "Créer un nouveau Candidate",
+        "createOrEditLabel": "Créer ou éditer un Candidate",
+        "notFound": "Aucun Candidate trouvé"
+      },
+      "created": "Un nouveau Candidate a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Candidate avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Candidate avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Candidate {{ id }} ?"
+      },
+      "detail": {
+        "title": "Candidate"
+      },
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "assessment": "Assessment"
+    }
+  }
+}
