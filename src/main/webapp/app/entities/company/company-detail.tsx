@@ -31,6 +31,10 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
             </span>
           </dt>
           <dd>{companyEntity.name}</dd>
+          <dt>
+            <Translate contentKey="codeRevealsApplicationApp.company.user">User</Translate>
+          </dt>
+          <dd>{companyEntity.user ? companyEntity.user.login : ''}</dd>
         </dl>
         <Button tag={Link} to="/company" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

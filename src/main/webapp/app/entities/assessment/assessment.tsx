@@ -37,6 +37,9 @@ export const Assessment = (props: IAssessmentProps) => {
                   <Translate contentKey="global.field.id">ID</Translate>
                 </th>
                 <th>
+                  <Translate contentKey="codeRevealsApplicationApp.assessment.name">Name</Translate>
+                </th>
+                <th>
                   <Translate contentKey="codeRevealsApplicationApp.assessment.role">Role</Translate>
                 </th>
                 <th>
@@ -59,6 +62,7 @@ export const Assessment = (props: IAssessmentProps) => {
                       {assessment.id}
                     </Button>
                   </td>
+                  <td>{assessment.name}</td>
                   <td>{assessment.role ? <Link to={`role/${assessment.role.id}`}>{assessment.role.id}</Link> : ''}</td>
                   <td>{assessment.company ? <Link to={`company/${assessment.company.id}`}>{assessment.company.id}</Link> : ''}</td>
                   <td>{assessment.candidate ? <Link to={`candidate/${assessment.candidate.id}`}>{assessment.candidate.id}</Link> : ''}</td>

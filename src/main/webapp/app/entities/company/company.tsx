@@ -39,6 +39,9 @@ export const Company = (props: ICompanyProps) => {
                 <th>
                   <Translate contentKey="codeRevealsApplicationApp.company.name">Name</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="codeRevealsApplicationApp.company.user">User</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -51,6 +54,7 @@ export const Company = (props: ICompanyProps) => {
                     </Button>
                   </td>
                   <td>{company.name}</td>
+                  <td>{company.user ? company.user.login : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${company.id}`} color="info" size="sm">
