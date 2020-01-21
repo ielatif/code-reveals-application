@@ -5,6 +5,7 @@ import { IInterviewer } from 'app/shared/model/interviewer.model';
 
 export interface IAssessment {
   id?: number;
+  name?: string;
   role?: IRole;
   company?: ICompany;
   candidate?: ICandidate;

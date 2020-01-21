@@ -3,6 +3,7 @@ entity Company {
 }
 
 entity Assessment {
+	name String
 }
 
 // an ignored comment
@@ -40,6 +41,10 @@ relationship OneToMany {
     Interviewer{assessment} to Assessment,
     Role{challenge} to Challenge,
     Challenge{task} to Task
+}
+
+relationship ManyToOne {
+    Company{user(login)} to User
 }
 
 relationship OneToOne {

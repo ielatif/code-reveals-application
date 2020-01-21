@@ -26,6 +26,12 @@ export const AssessmentDetail = (props: IAssessmentDetailProps) => {
         </h2>
         <dl className="jh-entity-details">
           <dt>
+            <span id="name">
+              <Translate contentKey="codeRevealsApplicationApp.assessment.name">Name</Translate>
+            </span>
+          </dt>
+          <dd>{assessmentEntity.name}</dd>
+          <dt>
             <Translate contentKey="codeRevealsApplicationApp.assessment.role">Role</Translate>
           </dt>
           <dd>{assessmentEntity.role ? assessmentEntity.role.id : ''}</dd>

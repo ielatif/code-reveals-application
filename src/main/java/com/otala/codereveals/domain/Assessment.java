@@ -22,6 +22,9 @@ public class Assessment implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Role role;
@@ -45,6 +48,19 @@ public class Assessment implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Assessment name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Role getRole() {
@@ -120,6 +136,7 @@ public class Assessment implements Serializable {
     public String toString() {
         return "Assessment{" +
             "id=" + getId() +
+            ", name='" + getName() + "'" +
             "}";
     }
 }

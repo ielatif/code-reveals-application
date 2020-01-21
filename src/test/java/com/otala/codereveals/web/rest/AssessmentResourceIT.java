@@ -34,6 +34,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = {CodeRevealsApplicationApp.class, TestSecurityConfiguration.class})
 public class AssessmentResourceIT {
 
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
+
     @Autowired
     private AssessmentRepository assessmentRepository;
 
@@ -75,7 +78,8 @@ public class AssessmentResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Assessment createEntity(EntityManager em) {
-        Assessment assessment = new Assessment();
+        Assessment assessment = new Assessment()
+            .name(DEFAULT_NAME);
         return assessment;
     }
     /**
@@ -85,7 +89,8 @@ public class AssessmentResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Assessment createUpdatedEntity(EntityManager em) {
-        Assessment assessment = new Assessment();
+        Assessment assessment = new Assessment()
+            .name(UPDATED_NAME);
         return assessment;
     }
 
@@ -109,6 +114,7 @@ public class AssessmentResourceIT {
         List<Assessment> assessmentList = assessmentRepository.findAll();
         assertThat(assessmentList).hasSize(databaseSizeBeforeCreate + 1);
         Assessment testAssessment = assessmentList.get(assessmentList.size() - 1);
+        assertThat(testAssessment.getName()).isEqualTo(DEFAULT_NAME);
     }
 
     @Test
@@ -141,7 +147,8 @@ public class AssessmentResourceIT {
         restAssessmentMockMvc.perform(get("/api/assessments?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(assessment.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(assessment.getId().intValue())))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
     }
     
     @Test
@@ -154,7 +161,8 @@ public class AssessmentResourceIT {
         restAssessmentMockMvc.perform(get("/api/assessments/{id}", assessment.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(assessment.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(assessment.getId().intValue()))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
     }
 
     @Test
@@ -177,6 +185,8 @@ public class AssessmentResourceIT {
         Assessment updatedAssessment = assessmentRepository.findById(assessment.getId()).get();
         // Disconnect from session so that the updates on updatedAssessment are not directly saved in db
         em.detach(updatedAssessment);
+        updatedAssessment
+            .name(UPDATED_NAME);
 
         restAssessmentMockMvc.perform(put("/api/assessments")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -187,6 +197,7 @@ public class AssessmentResourceIT {
         List<Assessment> assessmentList = assessmentRepository.findAll();
         assertThat(assessmentList).hasSize(databaseSizeBeforeUpdate);
         Assessment testAssessment = assessmentList.get(assessmentList.size() - 1);
+        assertThat(testAssessment.getName()).isEqualTo(UPDATED_NAME);
     }
 
     @Test

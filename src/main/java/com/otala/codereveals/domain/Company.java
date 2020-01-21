@@ -1,4 +1,5 @@
 package com.otala.codereveals.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -29,6 +30,10 @@ public class Company implements Serializable {
     @OneToMany(mappedBy = "company")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Assessment> assessments = new HashSet<>();
+
+    @ManyToOne
+    @JsonIgnoreProperties("companies")
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -75,6 +80,19 @@ public class Company implements Serializable {
 
     public void setAssessments(Set<Assessment> assessments) {
         this.assessments = assessments;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Company user(User user) {
+        this.user = user;
+        return this;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

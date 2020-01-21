@@ -17,7 +17,8 @@
         "title": "Company"
       },
       "name": "Name",
-      "assessment": "Assessment"
+      "assessment": "Assessment",
+      "user": "User"
     }
   }
 }

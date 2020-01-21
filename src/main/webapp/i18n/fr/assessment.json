@@ -16,6 +16,7 @@
       "detail": {
         "title": "Assessment"
       },
+      "name": "Name",
       "role": "Role",
       "company": "Company",
       "candidate": "Candidate",

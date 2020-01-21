@@ -7,6 +7,8 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
+import { IUser } from 'app/shared/model/user.model';
+import { getUsers } from 'app/shared/reducers/user-management';
 import { getEntity, updateEntity, createEntity, reset } from './company.reducer';
 import { ICompany } from 'app/shared/model/company.model';
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
@@ -15,9 +17,10 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface ICompanyUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const CompanyUpdate = (props: ICompanyUpdateProps) => {
+  const [userId, setUserId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { companyEntity, loading, updating } = props;
+  const { companyEntity, users, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/company');
@@ -29,6 +32,8 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
     } else {
       props.getEntity(props.match.params.id);
     }
+
+    props.getUsers();
   }, []);
 
   useEffect(() => {
@@ -81,6 +86,21 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 </Label>
                 <AvField id="company-name" type="text" name="name" />
               </AvGroup>
+              <AvGroup>
+                <Label for="company-user">
+                  <Translate contentKey="codeRevealsApplicationApp.company.user">User</Translate>
+                </Label>
+                <AvInput id="company-user" type="select" className="form-control" name="user.id">
+                  <option value="" key="0" />
+                  {users
+                    ? users.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.login}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/company" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
@@ -103,6 +123,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
+  users: storeState.userManagement.users,
   companyEntity: storeState.company.entity,
   loading: storeState.company.loading,
   updating: storeState.company.updating,
@@ -110,6 +131,7 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
+  getUsers,
   getEntity,
   updateEntity,
   createEntity,

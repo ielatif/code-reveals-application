@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col, Label } from 'reactstrap';
-import { AvFeedback, AvForm, AvGroup, AvInput } from 'availity-reactstrap-validation';
+import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
 import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
@@ -92,6 +92,12 @@ export const AssessmentUpdate = (props: IAssessmentUpdateProps) => {
                   <AvInput id="assessment-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
+              <AvGroup>
+                <Label id="nameLabel" for="assessment-name">
+                  <Translate contentKey="codeRevealsApplicationApp.assessment.name">Name</Translate>
+                </Label>
+                <AvField id="assessment-name" type="text" name="name" />
+              </AvGroup>
               <AvGroup>
                 <Label for="assessment-role">
                   <Translate contentKey="codeRevealsApplicationApp.assessment.role">Role</Translate>

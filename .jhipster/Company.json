@@ -12,6 +12,13 @@
             "otherEntityName": "assessment",
             "otherEntityRelationshipName": "company",
             "relationshipName": "assessment"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "company",
+            "relationshipName": "user",
+            "otherEntityField": "login"
         }
     ],
     "changelogDate": "20200112234849",
